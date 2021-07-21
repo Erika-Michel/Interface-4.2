@@ -24,7 +24,7 @@ public class FlightManager {
     public Flight[] searchBy(String from, String to) {
         Flight[] result = new Flight[0];
         for (Flight flight : repository.findAll()) {
-            if (flight.getFrom().contains(from) && flight.getTo().contains(to)) {
+            if (((flight.getFrom().equalsIgnoreCase(from)) && flight.getTo().equalsIgnoreCase(to))) {
                 Flight[] tmp = new Flight[result.length + 1];
                 System.arraycopy(result, 0, tmp, 0, result.length);
                 tmp[tmp.length - 1] = flight;

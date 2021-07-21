@@ -89,4 +89,13 @@ class FlightManagerTest {
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldFindIfLowercase() {
+
+        Flight[] expected = new Flight[]{fifth};
+        Flight[] actual = manager.searchBy("cDG", "jfk");
+
+        assertArrayEquals(expected, actual);
+    }
 }
