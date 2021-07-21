@@ -49,8 +49,6 @@ class FlightManagerTest {
         Flight[] expected = new Flight[]{first, seventh};
         Flight[] actual = manager.searchBy("JFK", "SVO");
 
-        Arrays.sort(actual);
-
         assertArrayEquals(expected, actual);
     }
 
@@ -59,8 +57,6 @@ class FlightManagerTest {
 
         Flight[] expected = new Flight[]{second, eighth, forth};
         Flight[] actual = manager.searchBy("LED", "SVO");
-
-        Arrays.sort(actual);
 
         assertArrayEquals(expected, actual);
     }
@@ -83,4 +79,14 @@ class FlightManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void shouldSortByPrice() {
+
+        Flight[] expected = new Flight[]{second, eighth, third, sixth, forth, fifth, first, seventh};
+        Flight[] actual = repository.findAll();
+
+        Arrays.sort(actual);
+
+        assertArrayEquals(expected, actual);
+    }
 }

@@ -15,9 +15,6 @@ public class Flight implements Comparable<Flight> {
         return price - o.price;
     }
 
-    public Flight() {
-    }
-
     public Flight(int id, int price, String from, String to, int time) {
         this.id = id;
         this.price = price;
